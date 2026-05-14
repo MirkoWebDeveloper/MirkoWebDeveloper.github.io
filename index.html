@@ -1,44 +1,521 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mirko Web Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mirko — Web Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #0d0f14;
+      --surface:  #13161d;
+      --card:     #181c25;
+      --border:   #252a36;
+      --accent:   #4f8ef7;
+      --accent2:  #7ec8e3;
+      --text:     #e8eaf0;
+      --muted:    #7a8394;
+      --tag-bg:   #1e2435;
+    }
 
-    <style>
-        body
-        {
-            background-color: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 100px;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        h1
-        {
-            font-size: 50px;
-        }
+    html { scroll-behavior: smooth; }
 
-        p
-        {
-            font-size: 20px;
-            color: #ccc;
-        }
-    </style>
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, .brand { font-family: 'Sora', sans-serif; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,15,20,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: .9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 7rem 0 5rem;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(79,142,247,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(126,200,227,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 480px;
+      margin-bottom: 2.2rem;
+    }
+    .btn-primary-custom {
+      display: inline-block;
+      padding: .75rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: .9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary-custom:hover {
+      background: #3a78e0;
+      transform: translateY(-2px);
+      color: #fff;
+    }
+    .hero-avatar {
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: .8rem;
+      text-align: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-avatar::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(79,142,247,.2);
+    }
+    .avatar-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: var(--muted);
+    }
+    .avatar-placeholder svg { opacity: .4; }
+
+    /* ── SEZIONE GENERICA ── */
+    section { padding: 6rem 0; }
+    .section-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -.5px;
+      margin-bottom: 1rem;
+    }
+    .divider {
+      width: 40px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+
+    /* ── CHI SONO ── */
+    #about { background: var(--surface); }
+    .about-text {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.9;
+    }
+    .about-text strong { color: var(--text); }
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: 2rem;
+    }
+    .skill-tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: .8rem;
+      font-weight: 600;
+      padding: .35rem .9rem;
+      border-radius: 6px;
+      font-family: 'Sora', sans-serif;
+    }
+
+    /* ── PROGETTI ── */
+    #projects { background: var(--bg); }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 320px;
+    }
+    .project-img {
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+      min-height: 300px;
+    }
+    .placeholder-img {
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      border-radius: 10px;
+      background: var(--tag-bg);
+      border: 2px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      gap: .7rem;
+      font-size: .85rem;
+    }
+    .placeholder-img svg { opacity: .35; }
+    .project-body {
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -.3px;
+      margin-bottom: .5rem;
+    }
+    .project-desc {
+      color: var(--muted);
+      font-size: .93rem;
+      margin-bottom: 1.2rem;
+    }
+    .tech-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1rem;
+    }
+    .tech-list li {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--accent2);
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .25rem .7rem;
+      border-radius: 5px;
+      font-family: 'Sora', sans-serif;
+    }
+    .project-meta-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1rem 0 .3rem;
+    }
+    .project-actions {
+      display: flex;
+      gap: .8rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .btn-outline-custom {
+      display: inline-block;
+      padding: .55rem 1.3rem;
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: .82rem;
+      border-radius: 7px;
+      text-decoration: none;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .btn-outline-custom:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .btn-accent-sm {
+      display: inline-block;
+      padding: .55rem 1.3rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: .82rem;
+      border-radius: 7px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-accent-sm:hover { background: #3a78e0; color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer span { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-avatar { width: 140px; height: 140px; margin: 0 auto; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-sub { margin: 0 auto 2rem; }
+      .project-card { grid-template-columns: 1fr; }
+      .project-img { border-right: none; border-bottom: 1px solid var(--border); min-height: 200px; }
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <h1>Ciao, sono Mirko 👋</h1>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#hero" class="brand">Mirko<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">Chi sono</a></li>
+      <li><a href="#projects">Progetti</a></li>
+    </ul>
+  </nav>
 
-    <p>
-        Junior Web Developer
-    </p>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">Disponibile per nuove opportunità</div>
+          <h1 class="hero-title">Ciao, sono <em>Mirko</em> —<br>Web Developer</h1>
+          <p class="hero-sub">Realizzo siti web moderni e responsive.</p>
+          <a href="#projects" class="btn-primary-custom">Vedi i miei progetti</a>
+        </div>
+        <div class="hero-avatar">
+          <div class="avatar-placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span>Foto profilo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>
-        Sto studiando HTML, CSS, JavaScript, PHP e MySQL.
-    </p>
+  <!-- CHI SONO -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label">Chi sono</div>
+      <h2 class="section-title">Un po' su di me</h2>
+      <div class="divider"></div>
+      <p class="about-text">
+        Sono un <strong>Web Developer Junior</strong> con una solida base nelle tecnologie front-end e back-end.
+        Appassionato di web design e sviluppo, mi impegno a creare interfacce <strong>pulite, funzionali e responsive</strong>
+        che offrano una buona esperienza utente su qualsiasi dispositivo.<br><br>
+        Ho acquisito competenze pratiche attraverso progetti reali, lavorando sia sulla struttura
+        che sull'aspetto visivo dei siti. Sono sempre pronto ad imparare e a mettermi in gioco
+        in contesti dinamici e stimolanti.
+      </p>
+      <div class="skills-row">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Bootstrap</span>
+        <span class="skill-tag">WordPress</span>
+      </div>
+    </div>
+  </section>
 
+  <!-- PROGETTI -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">I miei progetti</h2>
+      <div class="divider"></div>
+
+      <!-- PROGETTO 1: Ristorante -->
+      <div class="project-card">
+        <div class="project-img">
+          <div class="placeholder-img">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="3" y="3" width="18" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+            <span>Screenshot progetto</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div>
+            <h3 class="project-title">Sito Web per Ristorante Sapori di Casa</h3>
+            <p class="project-desc">
+              Sito vetrina sviluppato per un ristorante, progettato per offrire una navigazione semplice e un design moderno su tutti i dispositivi.
+            </p>
+
+            <div class="project-meta-title">Tecnologie utilizzate</div>
+            <ul class="tech-list">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Bootstrap</li>
+            </ul>
+
+            <div class="project-meta-title">Obiettivo del progetto</div>
+            <p class="project-desc">
+              Creare un sito semplice e intuitivo che permetta agli utenti di consultare facilmente il menu, le informazioni del ristorante ed effettuare le prenotazioni.
+            </p>
+
+            <div class="project-meta-title">Risultato</div>
+            <p class="project-desc">
+              Un sito leggero, responsive e facile da navigare, con particolare attenzione all'esperienza utente.
+            </p>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="btn-accent-sm">Visualizza sito</a>
+            <a href="#" class="btn-outline-custom">Codice sorgente</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROGETTO 2: Profumeria -->
+      <div class="project-card">
+        <div class="project-img">
+          <div class="placeholder-img">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="3" y="3" width="18" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+            <span>Screenshot progetto</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div>
+            <h3 class="project-title">Sito Web per Profumeria — [Nome da inserire]</h3>
+            <p class="project-desc">
+              [Descrizione del progetto da inserire. Spiega brevemente di cosa si tratta e cosa hai realizzato.]
+            </p>
+
+            <div class="project-meta-title">Tecnologie utilizzate</div>
+            <ul class="tech-list">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Bootstrap</li>
+            </ul>
+
+            <div class="project-meta-title">Obiettivo del progetto</div>
+            <p class="project-desc">
+              [Descrivi qui qual era l'obiettivo principale del sito.]
+            </p>
+
+            <div class="project-meta-title">Risultato</div>
+            <p class="project-desc">
+              [Descrivi qui il risultato finale e cosa hai ottenuto.]
+            </p>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="btn-accent-sm">Visualizza sito</a>
+            <a href="#" class="btn-outline-custom">Codice sorgente</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Realizzato da <span>Mirko</span> · Web Developer</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
