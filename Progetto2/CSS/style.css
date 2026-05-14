@@ -1,0 +1,683 @@
+/*STILE BODY INIZIO*/
+body
+{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f5f0e8;
+}
+hr.separatore
+{
+    margin: 0;
+    border: none;
+    height: 0.06rem;       
+    background-color: #494036;    
+}
+/*STILE BODY FINE*/
+
+/*STILE HEADER INIZIO*/
+header
+{
+    background-color: #080810;    
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+div.logo_menu
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    margin: 0 1rem;
+}
+div.logo_nome
+{
+    display: flex;
+    justify-content: center;    
+    padding: 1rem;
+}
+h1.nome_sito
+{
+    margin: 0 3rem;
+    font-size: 3rem;
+    color: #c9a84c;        
+}
+nav.menu
+{
+    display: flex;
+    gap: 4rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+a.home, .catalogo, .chi_siamo, .contatti
+{
+    text-decoration: none;
+    color: #f5f0e8;
+}
+a.home:hover, .catalogo:hover, .chi_siamo:hover, .contatti:hover
+{    
+    color: #c9a84c;
+}
+a.home.active, .catalogo.active, .chi_siamo.active, .contatti.active
+{    
+    color: #c9a84c;
+}
+button.hamburger 
+{ 
+    font-size: 1.6rem; 
+    background-color: #080810;
+    color: #c9a84c;
+    border: none;
+    display: none;
+}
+/*STILE HEADER FINE*/
+
+/*--------STILE HOME PAGE INIZIO--------*/
+
+/*STILE SEZIONE HERO INIZIO*/
+section.hero
+{
+    background-color: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.cont_immagine
+{
+    max-width: 100%;
+    margin: 8rem auto;
+}
+img.img_hero
+{
+    width: 75rem;
+    height: 31.25rem;
+    border: 1px solid #c9a84c;
+}
+div.desc_hero
+{
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    padding-bottom: 10rem;    
+}
+h2.tit1_hero
+{
+    font-size: 6rem;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+h3.tit2_hero
+{
+    font-size: 2rem;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6rem;
+    color: #aaaaaa;
+}
+a.call_hero
+{
+    color: #c9a84c;
+    text-decoration: none;
+    font-size: 1.80rem;
+    border: 0.06rem solid #c9a84c;
+    padding: 1rem;    
+}
+a.call_hero:hover
+{
+    background-color: #c9a84c;
+    color: #1a1a2e;
+}
+/*STILE SEZIONE HERO FINE*/
+
+/*STILE SEZIONE SELEZIONI INIZIO*/
+section.selezioni
+{
+    background-color: #0d0d1a;
+}
+div.selezioni_titolo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    padding: 3rem 0;
+}
+h2.tit_selezioni
+{
+    margin-top: 9rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4rem;
+}
+hr.riga_selezioni
+{
+    margin: 0;
+    border: none;
+    height: 0.13rem;
+    width: 5%;       
+    background-color: #c9a84c;    
+}
+div.insieme_card
+{
+    display: flex;
+    padding: 1rem;    
+}
+div.card
+{
+    border: 0.06rem solid #c9a84c;
+    width: 25rem;
+    height: auto;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.img_prodotto
+{
+    width: 25rem;
+    height: 25rem;
+}
+div.card_giu
+{
+    padding: 1rem;
+}
+h4.tit_categoria
+{
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin: 1rem auto;
+    color: #c9a84c;
+    font-size: 1.3rem;
+}
+h4.nome_prodotto
+{
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin: 1rem auto;    
+    font-size: 1.5rem;
+}
+p.desc_prodotto
+{
+    font-size: 1.2rem;
+    color: #aaaaaa;
+}
+/*STILE SEZIONE SELEZIONI FINE*/
+
+/*STILE SEZIONE DOVE SIAMO INIZIO*/
+section.trovaci
+{
+    background-color: #1a1a2e;
+    text-align: center;
+    padding-top: 2rem;
+    padding-left: auto;
+    padding-right: auto;
+    padding-bottom: 6rem;
+}
+h2.tit1_trovaci
+{
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin: 3rem auto;    
+    font-size: 2rem;
+    color: #aaaaaa;
+}
+h3.tit2_trovaci
+{
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;    
+    font-size: 5rem;
+    color: #c9a84c;
+}
+a.call_trovaci
+{
+    color: #c9a84c;
+    text-decoration: none;
+    font-size: 1.50rem;
+    border: 0.06rem solid #c9a84c;
+    padding: 1rem;    
+}
+a.call_trovaci:hover
+{
+    background-color: #c9a84c;
+    color: #1a1a2e;
+}
+/*STILE SEZIONE DOVE SIAMO FINE*/
+
+/*--------STILE HOME PAGE FINE--------*/
+
+/*--------STILE CATALOGO PAGE INIZIO--------*/
+
+/*STILE SEZIONE HERO INIZIO*/
+div.contenitore_titolo
+{
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;   
+}
+h2.tit_iniziale
+{
+    font-size: 4rem;
+    margin: 3rem auto;
+}
+hr.riga_piccola
+{
+    margin: 0;
+    border: none;
+    height: 0.13rem;
+    width: 8rem;       
+    background-color: #c9a84c;
+}
+/*STILE SEZIONE HERO FINE*/
+
+/*STILE SEZIONI DONNA, UOMO, UNISEX INIZIO*/
+section.donna, .uomo, .unisex
+{
+    background-color: #1a1a2e;
+    padding: 1rem;
+}
+h4.tit_donna, .tit_uomo, .tit_unisex
+{
+    margin: 1rem 3rem;
+    font-size: 2rem;
+    color: #c9a84c;
+}
+/*STILE SEZIONI DONNA, UOMO, UNISEX FINE*/
+
+/*--------STILE CATALOGO PAGE FINE--------*/
+
+/*--------STILE CHI SIAMO PAGE INIZIO--------*/
+
+/*STILE IMMAGINE TEAM INIZIO*/
+section.contenitore_immagine_team
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: #1a1a2e;    
+}
+img.team
+{
+    width: 75rem;
+    height: 50rem;
+    margin-bottom: 6rem;
+}
+/*STILE IMMAGINE TEAM FINE*/
+
+/*STILE DESCRIZIONE STORIA INIZIO*/
+section.storia
+{
+    padding: 3rem;
+    background-color: #1a1a2e;
+}
+h4.tit_storia
+{
+    margin: 2rem auto;
+    font-size: 3rem;
+    color: #c9a84c;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;  
+}
+p.desc_storia
+{
+    color: #aaaaaa;
+    font-size: 1.6rem;
+    margin-bottom: 6rem;
+}
+/*STILE DESCRIZIONE STORIA FINE*/
+
+/*--------STILE CHI SIAMO PAGE FINE--------*/
+
+/*STILE FOOTER INIZIO*/
+footer
+{
+    background-color: #080810;        
+}
+div.parte_alta
+{
+    display: flex;
+    padding: 1rem;
+}
+div.menu_rapido, .contatti_rapidi, .orari_rapidi
+{
+    width: auto;
+    height: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+h4.tit_footer
+{
+    color: #c9a84c;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul.elenco_footer
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;    
+}
+li
+{
+    margin-bottom: 0.8rem;
+}
+a.home_footer, .catalogo_footer, .chi_siamo_footer, .contatti_footer, .mail_footer
+{
+    text-decoration: none;
+    color: #f5f0e8;
+}
+a.home_footer:hover, .catalogo_footer:hover, .chi_siamo_footer:hover, .contatti_footer:hover, .mail_footer:hover
+{    
+    color: #c9a84c;
+}
+div.parte_bassa
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+hr.separatore_footer
+{
+    margin: 0;
+    border: none;
+    height: 0.06rem;       
+    background-color: #494036;
+    width: 80%;    
+}
+p.diritti
+{
+    letter-spacing: 0.3rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+/*STILE FOOTER FINE*/
+
+/*MEDIA QUERY INIZIO*/
+
+/* =============================
+   TABLET (769px - 1024px)
+   ============================= */
+@media (max-width: 1024px) and (min-width: 769px) 
+{
+    /* HEADER */
+    h1.nome_sito 
+    {
+        font-size: 2rem;
+        margin: 0 1rem;
+    }    
+    nav.menu 
+    {
+        gap: 2rem;
+        font-size: 1.2rem;
+    }
+
+    /* HOME - HERO */
+    img.img_hero 
+    {
+        width: 90vw;
+        height: auto;
+    }
+    div.cont_immagine 
+    {
+        margin: 4rem auto;
+    }
+    h2.tit1_hero 
+    {
+        font-size: 4rem;
+    }
+    h3.tit2_hero 
+    {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    /* HOME - SELEZIONI */
+    h2.tit_selezioni 
+    {
+        font-size: 2.5rem;
+        margin-top: 4rem;
+    }
+    div.insieme_card 
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    div.card 
+    {
+        width: 18rem;
+    }
+    img.img_prodotto 
+    {
+        width: 18rem;
+        height: 14rem;
+    }
+
+    /* HOME - TROVACI */
+    h3.tit2_trovaci 
+    {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* CATALOGO */
+    h2.tit_iniziale 
+    {
+        font-size: 3rem;
+    }
+
+    /* CHI SIAMO */
+    img.team 
+    {
+        width: 90vw;
+        height: auto;
+    }
+    p.desc_storia 
+    {
+        font-size: 1.3rem;
+    }
+
+    /* FOOTER */
+    div.parte_alta 
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+    p.diritti 
+    {
+        font-size: 0.7rem;
+        letter-spacing: 0.1rem;
+    }
+}
+
+/* =============================
+   SMARTPHONE (max 768px)
+   ============================= */
+@media (max-width: 768px) 
+{
+    /* HEADER */
+    h1.nome_sito 
+    {
+        font-size: 1.4rem;
+        margin: 0 0.5rem;
+    }    
+    nav.menu 
+    {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background-color: #080810;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid #494036;
+        z-index: 999;
+    }
+    nav.menu.aperto 
+    {
+        display: flex;
+    }
+    nav.menu a 
+    {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #494036;
+    }
+    button.hamburger 
+    {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* HOME - HERO */
+    div.cont_immagine 
+    {
+        margin: 2rem auto;
+    }
+    img.img_hero 
+    {
+        width: 95vw;
+        height: auto;
+    }
+    h2.tit1_hero 
+    {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    h3.tit2_hero 
+    {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    a.call_hero 
+    {
+        font-size: 1.2rem;
+    }
+    div.desc_hero 
+    {
+        padding-bottom: 4rem;
+    }
+
+    /* HOME - SELEZIONI */
+    h2.tit_selezioni 
+    {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    div.insieme_card 
+    {
+        padding: 0;        
+        flex-direction: column;
+        align-items: center;
+    }
+    div.card 
+    {
+        width: 90vw;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    img.img_prodotto 
+    {
+        width: 90vw;
+        height: auto;
+    }
+
+    /* HOME - TROVACI */
+    h3.tit2_trovaci 
+    {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    h2.tit1_trovaci 
+    {
+        font-size: 1.5rem;
+    }
+    a.call_trovaci 
+    {
+        font-size: 1.1rem;
+    }
+
+    /* CATALOGO */
+    div.contenitore_titolo 
+    {
+        height: 15rem;
+    }
+    h2.tit_iniziale 
+    {
+        font-size: 2rem;
+    }
+    h4.tit_donna, .tit_uomo, .tit_unisex 
+    {
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+
+    /* CHI SIAMO */
+    img.team 
+    {
+        width: 95vw;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    h4.tit_storia 
+    {
+        font-size: 2rem;
+    }
+    p.desc_storia 
+    {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+
+    /* FOOTER */
+    div.parte_alta 
+    {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    div.menu_rapido, .contatti_rapidi, .orari_rapidi 
+    {
+        margin: 1rem auto;
+    }
+    p.diritti 
+    {
+        font-size: 0.6rem;
+        letter-spacing: 0.05rem;
+    }
+}
+/*MEDIA QUERY FINE*/
