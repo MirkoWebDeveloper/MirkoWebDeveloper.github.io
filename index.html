@@ -143,37 +143,7 @@
       background: #3a78e0;
       transform: translateY(-2px);
       color: #fff;
-    }
-    .hero-avatar {
-      width: 220px; height: 220px;
-      border-radius: 50%;
-      background: var(--card);
-      border: 2px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: .8rem;
-      text-align: center;
-      flex-shrink: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .hero-avatar::after {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      border: 1px solid rgba(79,142,247,.2);
-    }
-    .avatar-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-      color: var(--muted);
-    }
-    .avatar-placeholder svg { opacity: .4; }
+    } 
 
     /* ── SEZIONE GENERICA ── */
     section { padding: 6rem 0; }
@@ -382,15 +352,7 @@
           <h1 class="hero-title">Ciao, sono <em>Mirko</em><br>Web Developer</h1>
           <p class="hero-sub">Realizzo siti web moderni e responsive.</p>
           <a href="#projects" class="btn-primary-custom">Vedi i miei progetti</a>
-        </div>
-        <div class="hero-avatar">
-          <div class="avatar-placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
-            <span>Foto profilo</span>
-          </div>
-        </div>
+        </div>        
       </div>
     </div>
   </section>
