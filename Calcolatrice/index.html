@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calcolatrice</title>
+        <link rel= "stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+
+    <body>
+        <div class="calcolatrice">
+            <div class="display">
+                <input class="display" type="text" id="display" readonly>
+            </div>
+
+            <div class="bottoni">
+                <button class="tasto" onclick="aggiungiValore('7')">7</button>
+                <button class="tasto" onclick="aggiungiValore('8')">8</button>
+                <button class="tasto" onclick="aggiungiValore('9')">9</button>
+                <button class="tasto" onclick="aggiungiValore('/')">/</button>
+                
+                <button class="tasto" onclick="aggiungiValore('4')">4</button>
+                <button class="tasto" onclick="aggiungiValore('5')">5</button>
+                <button class="tasto" onclick="aggiungiValore('6')">6</button>
+                <button class="tasto" onclick="aggiungiValore('*')">*</button>
+                
+                <button class="tasto" onclick="aggiungiValore('1')">1</button>
+                <button class="tasto" onclick="aggiungiValore('2')">2</button>
+                <button class="tasto" onclick="aggiungiValore('3')">3</button>
+                <button class="tasto" onclick="aggiungiValore('-')">-</button>
+                
+                <button class="tasto" onclick="aggiungiValore('0')">0</button>
+                <button class="tasto" onclick="aggiungiValore('.')">.</button>
+                <button class="tasto" onclick="cancella()">C</button>
+                <button class="tasto" onclick="aggiungiValore('+')">+</button>
+                
+                <button class="calcola" onclick="calcola()">=</button>
+            </div>            
+        </div>
+    </body>
+</html>
