@@ -1,0 +1,228 @@
+/*Logo      → Tangerine
+Titoli    → Cormorant Garamond
+Testo     → EB Garamond*/
+
+header 
+{
+    background-color: #e1c699;       
+    font-family: "Cormorant Garamond", serif;    
+    font-weight: 400;
+    font-style: normal;
+    color: #543a2b;
+    border-bottom: 0.125rem dotted #693214;
+}
+
+a.logo
+{
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3.125rem;
+}
+
+div.container-fluid
+{
+    gap: 1.875rem;
+}
+
+ul.navbar-nav
+{    
+    gap: 0.625rem;
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+input
+{
+    border: 1px solid #83726a;
+    border-radius: 3.125rem;
+    background-color: #fdfaf3;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+button.cerca 
+{
+    /* Nasconde il testo */
+    font-size: 0;
+    text-indent: -9999px;
+    
+    /* Aggiunge l'icona della lente */
+    background-image: url(../immagini/lente.png);
+    border: none;
+    width: 1.875rem;
+    height: 1.875rem;
+    cursor: pointer;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #f2dfbf;
+    overflow-x: hidden;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main
+{
+    flex: 1;
+}
+
+/*Stile Home*/
+
+div.container
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6.25rem;
+}
+
+div.hero
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4)), url(../immagini/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;    
+    width: 100%;
+    min-height: 37.125rem;   
+    border-radius: 1.25rem; 
+}
+
+h1.hero-tit
+{
+    text-align: center;
+    margin-top: 1.875rem;
+    font-family: "Cormorant Garamond", serif;    
+    font-weight: 400;
+    font-style: normal;
+    color: #f8efe8;       
+}
+
+/*stile cards*/
+
+div.ricetta
+{
+    width: 25rem;
+    height: auto;
+    background-color: #fef7ed;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+    border: 2px solid #8d7668;
+    border-radius: 1.25rem;
+    color: #2c1d16;
+}
+
+img.img-ricetta
+{
+    width: 25rem;    
+    height: auto;
+    padding-top: 0.6875rem;
+    border-radius: 12.5rem;
+}
+
+h3.ricetta-tit
+{
+    text-align: center;    
+    font-family: "Cormorant Garamond", serif;    
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;     
+}
+
+p.param-ricetta
+{
+    font-size: 1.25rem;
+}
+
+span
+{
+    color: #571604;    
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-radius: 1.25rem; 
+    background-color: #efd3ae;   
+}
+
+/*Stile pagina ricette*/
+
+div.box
+{
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+    text-align: center;    
+    font-family: "Cormorant Garamond", serif;    
+    font-weight: 400;
+    font-style: normal;
+    color: #543a2b;
+}
+
+/*Stile pagina bigoli*/
+
+div.descrizione
+{
+    display: flex;
+    flex-direction: column;
+}
+
+h1.tit-descrizione
+{
+    text-align: center;    
+    font-family: "Cormorant Garamond", serif;    
+    font-weight: 400;
+    font-style: normal;    
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;    
+}
+
+img.bigoli
+{
+    width: 37.5rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6.25rem;
+}
+
+p.preparazione
+{
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25rem;
+    color: #000000;
+    padding: 0.625rem;
+    margin-bottom: 6.25rem;
+}
+
+
+
+footer
+{
+    background-color: #e1c699;       
+    font-family: "Cormorant Garamond", serif;    
+    font-weight: 400;
+    font-style: normal;
+    color: #543a2b;
+    text-align: center; 
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;   
+    border-top: 2px dotted #693214;
+}
+
