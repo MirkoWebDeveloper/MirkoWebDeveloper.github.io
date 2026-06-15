@@ -72,19 +72,18 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="menu-navigation collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav"><!--Lista menu di navigazione-->
+                        <ul class="navbar-nav mx-auto"><!--Lista menu di navigazione-->
                             <?php if (!isset($_SESSION['user_id'])): ?>                                
                             
                             <?php else: ?>                            
-                            <li><a class="navi" aria-current="page" href="index.php">Home</a></li>
+                            <li><a class="navi" href="index.php">Home</a></li>
                             <li><a class="navi" href="trips.php">Trips</a></li>                            
                             <li><a class="navi" href="#map">Map</a></li> <!--punta alla mappa interattiva sotto-->
                             
                             <?php endif; ?>
-                        </ul>   
-                    </div>
-                    <div class="menu-login">
-                        <ul class="navbar-nav"><!--Lista login, Aggiungi viaggio-->
+                        </ul>
+                        
+                        <ul class="navbar-nav ms-auto"><!--Lista login, Aggiungi viaggio-->
                             <?php if (!isset($_SESSION['user_id'])): ?><!-- Utente NON loggato: solo Login -->
                                 <li><a class="login" href="#" onclick="openModal()">Login</a></li>
                             
@@ -95,11 +94,10 @@
 
                             <?php endif; ?>                                                                   
                         </ul>  
-                    </div>
+                    </div>                    
                 </div>
             </nav> 
         </header>
-
         <main>
             <section class="hero-home"><!--Sezione HERO-->
                 <h1 class="hero-title">Discover your next adventure, <br>the low-cost way</h1>
