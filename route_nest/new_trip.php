@@ -104,32 +104,41 @@
 
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg"><!--MENU DI NAVIGAZIONE + LOGO-->
                 <div class="container-fluid">
                     <a href="index.php">
-                        <img class="logo" src="immagini/logo.png" alt="RouteNest logo">
+                        <img class="logo" src="immagini/logo.png" alt="RouteNest logo"><!--Logo cliccabile-->
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="menu-navigation collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav mx-auto"><!--Lista menu di navigazione-->
+                            <?php if (!isset($_SESSION['user_id'])): ?>                                
+                            
+                            <?php else: ?>                            
                             <li><a class="navi" href="index.php">Home</a></li>
-                            <li><a class="navi" href="trips.php">Trips</a></li>
-                            <li><a class="navi" href="#">News</a></li>
-                            <li><a class="navi" href="#map">Map</a></li>
+                            <li><a class="navi" href="trips.php">Trips</a></li>                            
+                            <li><a class="navi" href="index.php#map">Map</a></li> <!--punta alla mappa interattiva sotto-->
+                            
+                            <?php endif; ?>
                         </ul>
-                    </div>
-                    <div class="menu-login">
-                        <ul class="navbar-nav">
-                            <li><a class="navi logout" href="logout.php">Logout</a></li>
-                            <li><a class="navi profile" href="profile.php">Profile</a></li>
-                            <li><a class="navi new-trip" href="new_trip.php">+New Trip</a></li>
-                        </ul>
-                    </div>
+                        
+                        <ul class="navbar-nav ms-auto"><!--Lista login, Aggiungi viaggio-->
+                            <?php if (!isset($_SESSION['user_id'])): ?><!-- Utente NON loggato: solo Login -->
+                                <li><a class="login" href="#" onclick="openModal()">Login</a></li>
+                            
+                            <?php else: ?><!-- Utente loggato: Logout, Profilo, +Trip -->
+                                <li><a class="navi profile" href="profile.php">Profile</a></li>
+                                <li><a class="logout" href="logout.php">Logout</a></li>                                
+                                <li><a class="new-trip" href="new_trip.php">+New Trip</a></li>
+
+                            <?php endif; ?>                                                                   
+                        </ul>  
+                    </div>                    
                 </div>
-            </nav>
+            </nav> 
         </header>
 
         <main>
