@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Form</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+
+    <body>
+        
+        <form id="compilazione" novalidate>
+            <input id="nome" type="text" name="nome" required placeholder="Nome">
+            <br>
+            <span id="errorNome"></span>
+            <br><br>
+            <input id="mail" type="email" name="mail" required placeholder="E-mail">
+            <br>
+            <span id="errorMail"></span>
+            <br><br>
+            <input id="password" type="password" name="password" required placeholder="Password">
+            <button type="button" id="mostraPassword">Mostra</button>
+            <br>
+            <span id="errorPass"></span>
+            <br><br>
+            <input id="conferma" type="password" name="conferma" required placeholder="Conferma Password">
+            <br>
+            <span id="errorConf"></span>
+            <br><br>
+            <input id="registrati" type="submit" value="Registrati">           
+        </form>
+
+        <p id="successo" hidden></p>
+
+    </body>
+</html>

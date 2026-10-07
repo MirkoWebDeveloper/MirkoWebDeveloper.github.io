@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#compilazione {
+    max-width: 400px;     
+    border: 1px solid black;
+    padding: 20px;    
+}
+
+span {
+    color: red;
+    font-size: small;    
+}
+
+.valido {
+    border: 1px solid green;
+    color: green;
+}
+
+.errore {
+    border: 1px solid red;
+    color: red;
+}
+
+#successo {
+    border: 1px solid green;
+    color: green;
+    background-color: lightgreen;
+}
+
+#registrati {
+    background-color: black;
+    color: white;
+}
+
+#registrati:hover {
+    color: green;
+}
+
