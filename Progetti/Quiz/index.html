@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz Gaming</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+
+    <body>
+        <section id="rispMultipla">
+            <h1 id="tit">Quiz Gaming</h1>
+            <div id="indicatore"></div><!--barra di progressione-->
+            <div id="domande">
+                <h2 id="domanda"></h2><!--domanda da riempire con JS-->
+                <!--bottoni risposte da inserire con JS-->
+            </div>
+            <span id="errore"></span><!--fa comparire un messaggio di errore se si preme il bottone prossima senza selezionare una risposta-->
+            <button type="button" id="prossima">Prossima</button><!--bottone per passare alla prossima domanda-->
+
+            <p id="risultato" hidden></p>
+            <button class="nascosto" id="ricomincia" type="button">Ricomincia</button>
+            
+        </section>
+    </body>
+</html>
